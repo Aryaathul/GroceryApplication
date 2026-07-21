@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.Constant;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.ManageDeliveryBoyPage;
@@ -28,7 +29,7 @@ public class ManageDeliveryBoyTest extends Base {
 		RandomDataUtility rd= new RandomDataUtility();
 		db.enterName(rd.fullname()).enterEmail(rd.emailid()).enterPhoneNumber(rd.mobnumber()).enterAddress(rd.address()).enterUsername(rd.randomusername()).enterPassword(rd.randompassword()).clickSaveButton();
 		boolean alertresult=db.isalertresult();
-		Assert.assertTrue(alertresult, "USER IS UNABLE CREATE NEW USER INFO");
+		Assert.assertTrue(alertresult, Constant.NEWUSERINFOCREATIONERROR);
 		
 	}
 }

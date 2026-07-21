@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.Constant;
 import pages.HomePage;
 import pages.LoginPage;
 import project.Base;
@@ -25,7 +26,7 @@ public class HomeTest extends Base{
 		obj.clickAdminButton();
 		obj1=obj.logoutButton();
 		boolean result=obj1.isTextDisplayed();
-		Assert.assertTrue(result,"User is unable to logout");
+		Assert.assertTrue(result,Constant.LOGOUTERROR);
 		
 	}
 	

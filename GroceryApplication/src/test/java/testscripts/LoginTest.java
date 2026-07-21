@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import constant.Constant;
 import pages.HomePage;
 import pages.LoginPage;
 import project.Base;
@@ -23,7 +24,7 @@ public class LoginTest extends Base{
 		hp=obj.signIn();
 		
 		boolean dashboardresult=hp.isdashboardresult();
-		Assert.assertTrue(dashboardresult, "USER IS UNABLE TO LOGIN WITH VALID CREDENTIALS");
+		Assert.assertTrue(dashboardresult, Constant.VALIDCREDENTIALERROR);
 		
 	}
 	
@@ -36,7 +37,7 @@ public class LoginTest extends Base{
 		obj.userName(userNameValue).password(passwordValue).signIn();
 		String expected= "7rmart supermarket";
 		String actual=obj.confirmLoginpagesStoreName();
-		Assert.assertEquals(expected, actual,"User is able to Logged in with invalid username");
+		Assert.assertEquals(expected, actual,Constant.INVALIDUSERNAMEERROR);
 	}
 	
 	@Test(priority=3,description="User is trying to login with invalid password",groups= {"Smoke"} ,retryAnalyzer= retry.ReTry.class)
@@ -48,7 +49,7 @@ public class LoginTest extends Base{
 		obj.userName(userNameValue).password(passwordValue).signIn();
 		String expected= "7rmart supermarket";
 		String actual=obj.confirmLoginpagesStoreName();
-		Assert.assertEquals(expected, actual,"Logged in with invalid password");
+		Assert.assertEquals(expected, actual,Constant.INVALIDPASSWORDERROR);
 	}
 	
 	@Test(priority=4,description="User is trying to login with invalid credentials",dataProvider="loginProvider")
@@ -60,7 +61,7 @@ public class LoginTest extends Base{
 		obj.userName(userNameValue).password(passwordValue).signIn();
 		String expected= "7rmart supermarket";
 		String actual=obj.confirmLoginpagesStoreName();
-		Assert.assertEquals(expected, actual,"Logged in with invalid username and password");
+		Assert.assertEquals(expected, actual,Constant.INVALICREDENTIALERROR);
 	}
 	
 	@DataProvider(name="loginProvider")

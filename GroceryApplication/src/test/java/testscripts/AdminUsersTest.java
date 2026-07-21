@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.Constant;
 import pages.AdminUsersPage;
 import pages.HomePage;
 import pages.LoginPage;
@@ -29,7 +30,7 @@ public class AdminUsersTest extends Base {
 		ap=hp.adminUsersMoreInfoLink();
 		ap.clickNewButton().newUserUsernameCreation(newUserNameValue).newUserPasswordCreation(newPasswordValue).selectUserType().saveUser();
 		boolean alertResult=ap.isalertDisplayed();
-		Assert.assertTrue(alertResult,"USER IS UNABLE CREATE NEW USER INFO");
+		Assert.assertTrue(alertResult,Constant.NEWADMINUSERCREATIONERROR);
 	}
 	
 	@Test(description="User is trying to search newly added user")
@@ -46,7 +47,7 @@ public class AdminUsersTest extends Base {
 		ap=hp.adminUsersMoreInfoLink();
 		ap.searchUser().enterUsernameField(newUserNameValue).selectUserTypeForSearch().searchForNewlyAddedUser();	
 		boolean statusResult=ap.isStatusDisplayed();
-		Assert.assertTrue(statusResult,"USER IS UNABLE TO SEARCH NEW USER INFO");
+		Assert.assertTrue(statusResult,Constant.NEWADMINUSERSEARCHERROR);
 		
 	}
 }
