@@ -90,10 +90,9 @@ GroceryApplication
 
 ### How to run the project
 1. Clone the repository:
-
 git clone https://github.com/Aryaathul/GroceryApplication
-3. Install Maven dependencies
-4. Run the TestNG test suite
+2. Install Maven dependencies
+3. Run the TestNG test suite
 
 ## Test Execution
 The test cases can be executed:
