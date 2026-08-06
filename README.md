@@ -34,8 +34,11 @@ The framework follows the **Page Object Model (POM)** design pattern to ensure c
 ✔ Reusable utility classes for waits, screenshots, reporting, and random data generation
 
 ## Project Structure
+
+```text
 GroceryApplication
-│── src
+│
+├── src
 │   ├── main
 │   │   ├── java
 │   │   │   ├── constant
@@ -68,6 +71,7 @@ GroceryApplication
 │       │       ├── ManageContactTest.java
 │       │       ├── ManageDeliveryBoyTest.java
 │       │       └── ManageNewsTest.java
+│       └── resources
 │
 ├── OutputScreenShot
 ├── extent-reports
@@ -78,6 +82,7 @@ GroceryApplication
 ├── crossbrowser.xml
 ├── multibrowser.xml
 └── grouping.xml
+```
 
 ## Automated Test Modules
 
